@@ -32,3 +32,8 @@
         to show ip (though it is local anyway)
     ​[18:20] Rasmus Kilp
         $ kubectl expose deployment rasmus-upn --port=8080
+#docker build
+#docker run
+#docker ps
+#docker inspect container/network
+#docker run -p for port bind
