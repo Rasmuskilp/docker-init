@@ -12,5 +12,8 @@ RUN apt-get upgrade -y
 RUN npm install express --save
 run npm install mongoose -y
 run npm install ejs -y
+run npm install faker --save
+RUN export DB_HOST=mongodb://mongo:27017/posts
+RUN node seeds/seed.js
 EXPOSE 3000
 CMD ["npm","start"]
