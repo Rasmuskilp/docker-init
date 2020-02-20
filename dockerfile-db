@@ -1,0 +1,17 @@
+FROM ubuntu:18.04
+# links folder in VM to another folder in the VM
+WORKDIR /home/ubuntu
+ADD environment/db /home/ubuntu/environment/db
+RUN apt-get update -y
+RUN apt-get install wget -y
+RUN apt-get install sudo -y
+RUN apt-get install -y gnupg2
+RUN apt-get install systemd -y
+RUN chmod u+x environment/db/provision.sh
+RUN ./environment/db/provision.sh
+VOLUME ["/data/db"]
+WORKDIR /data
+EXPOSE 27017
+#CMD ["mongod","start"]
+CMD ["mongod", "--smallfiles"]
+#CMD ["chmod 777 environment/provision.sh","./environment/provision.sh"]
