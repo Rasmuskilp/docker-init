@@ -1,4 +1,4 @@
-#this folder is for a docker-demo
+# this folder is for a docker-demo
 ## Dockerfile contains the necessary configurations
 ## do docker image build docker-init
 ## to containarise : docker run "image"
@@ -11,13 +11,18 @@
 #docker ps
 #docker inspect container/network
 #docker run -p for port bind
+#docker-compose commands:
+## up - builds image if none exist and starts containers
+## build - builds images
+## down - destroys containers
+
 #This project is to deploy a python app and make it connect to a mongod database to read posts.
 ## There are three files of interest:Two dockerfiles for app and db and docker-compose file.
 ### dockerfile acts as a provisioning file
 ### docker-comppose is a configuration file for networking and deploying clusters.
 ### The dockerfiles contain basic coding to create a working python environment for the app and mongod.
 ## The python app is also configured to communicate-read posts from the mongod through setting the DB_HOST env inside app and having a shared network through docker compose.
-
+## Currently the app in unable to get posts, e.g. connect to the db eventhough the db is fully functional
 # This part is for kubernetes
 
 [18:17] Rasmus Kilp
