@@ -6,6 +6,20 @@
 ## to keep container running
 ## docker images - shows current images
 ##docker ps -a : shows containers
+#docker build
+#docker run
+#docker ps
+#docker inspect container/network
+#docker run -p for port bind
+#This project is to deploy a python app and make it connect to a mongod database to read posts.
+## There are three files of interest:Two dockerfiles for app and db and docker-compose file.
+### dockerfile acts as a provisioning file
+### docker-comppose is a configuration file for networking and deploying clusters.
+### The dockerfiles contain basic coding to create a working python environment for the app and mongod.
+## The python app is also configured to communicate-read posts from the mongod through setting the DB_HOST env inside app and having a shared network through docker compose.
+
+# This part is for kubernetes
+
 [18:17] Rasmus Kilp
     $ minikube start --vm-driver=hyperv --kubernetes-version 1.14.8
 ​[18:17] Rasmus Kilp
@@ -32,8 +46,3 @@
         to show ip (though it is local anyway)
     ​[18:20] Rasmus Kilp
         $ kubectl expose deployment rasmus-upn --port=8080
-#docker build
-#docker run
-#docker ps
-#docker inspect container/network
-#docker run -p for port bind
